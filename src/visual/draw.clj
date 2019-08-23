@@ -48,13 +48,3 @@
   )
 
 
-(->> (range (/ 20 4))
-     (map (fn [i] (take 5 (repeat i)))) 
-     (flatten)
-     (vector (range 20))
-     (apply map vector)
-     (map (fn [[i offset]]
-            (let [offset-size (* offset 20)]
-              [[0 (* i 5 )] [(+ 200 offset-size) (* i 5 )]]))))
-
-
